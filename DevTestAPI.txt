@@ -1,0 +1,70 @@
+/**
+* Install REST Client VSCode extension
+* To execute the bellow => cntrl + shift + p
+* Search for rest and select the run command 
+*/
+
+----- Check health -----
+
+GET http://localhost:8081/healthCheck/health
+
+
+----- Register Country -----
+
+POST http://localhost:8081/countries/
+content-type: application/json 
+
+{
+    "countryName": "US",
+    "currency": "USD"
+}
+
+
+----- Register Branch -----
+
+POST http://localhost:8081/branches/countries/US
+content-type: application/json 
+
+{
+    "branchName": "Texas Main",
+    "currency": "USD"
+}
+
+
+----- Register User -----
+
+POST http://localhost:8081/users
+content-type: application/json 
+
+{
+    "username": "Thathsara",
+    "password": "pass0001",
+    "firstName": "Thathsara",
+    "lastName": "Raviraj",
+    "email": "aa@g.com",
+    "tele": "0772135521"
+}
+
+
+----- Register Account -----
+
+POST http://localhost:8081/accounts/users/ed95f60d-d93d-4299-ad69-2d62bdb52da0/branches/66c0a206-1c1c-40bd-a516-0c261a60117c
+content-type: application/json 
+
+{
+    "accountType": "SAVING",
+    "accountBalance": 5000
+}
+
+
+
+----- Add Transaction -----
+
+POST http://localhost:8081/transactions/accounts/ec445f19-2c16-4eb3-b649-37bcf21ef891
+content-type: application/json 
+
+{
+    "beneficiaryAccountNumber": "14602a19-cb2e-48b3-b019-2fce1eaba5a1",
+    "transactionAmount": 30000,
+    "transactionDescription": "transfer money"
+}
