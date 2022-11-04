@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  processor:
+    container_name: ${BANK_REST_API_CONTAINER_NAME}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - ${BANK_REST_API_LOCAL_PORT}:${BANK_REST_API_DOCKER_PORT}
+    image: bank-rest-api-img
+    stdin_open: true
+    tty: true # allocate virtual terminal session within the container
+    #We use the default network which is configured to connect to the bank-tranaction-processor_bank-app-network
+
+networks:
+  default:
+    name: bank-tranaction-processor_bank-app-network
+    external: true # connect to the bank-app-network created by processor

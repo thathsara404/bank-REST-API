@@ -1,5 +1,12 @@
-# Bank Service
-This is the Bank Service repository
+# Bank REST API
+This repo can be used to Create, Update, Read, Delete the following resources.
+ - Country
+ - Branch
+ - Account
+ - Transaction
+ - User
+
+This is related to https://github.com/thathsara404/bank-Tranaction-Processor
 
 # Technical Stack & External Dependencies
 use  `mvn dependency:tree` to view more.
@@ -22,6 +29,12 @@ use  `mvn dependency:tree` to view more.
 | 4     | Modify application properties | Need to change the postgres and RabbitMQ entries in application.properties as per your environment.|
 | 5     | Start the application. Run DevTestAPI.txt file commands with REST Client plugin in VS Code or try with Postman. | Now you can consume the APIs. |
 | 6     | Run Transaction Processor | Make sure Transaction Processor is up and running to run transaction api route. | Now you can consume the APIs. |
+
+# Steps to run with docker
+| Step  | Instructions                                | Description                                                                                               |
+| ----- |:--------------------------------------------|:--------------------------------------------------------------------------------------------------------- |
+| 1     | `bash docker-compose-run.sh` | Run this bash script to initiate the app container and to connect to the network.
+| 2     | Spin up the bankREST-API | Follow the instructions in the bank-Transaction-Processor repo's README.
 
 # Dev guide
 - make sure your java version is 17
