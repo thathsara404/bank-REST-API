@@ -100,7 +100,7 @@ public class RabbitMQConfig {
         Channel channel = null;
         try {
             channel = connection.createChannel();
-            channel.exchangeDeclare(exchangeName, BuiltinExchangeType.TOPIC, true);
+            channel.exchangeDeclare(exchangeName, BuiltinExchangeType.TOPIC, true); // Exchange Type
             // I need this publisher to publish messages for transaction.success and transaction.* routing keys
             // So U do not bind this to specific queue.
             // String queueName = channel.queueDeclare().getQueue();

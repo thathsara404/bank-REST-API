@@ -34,7 +34,7 @@ public class TransactionRepositoryImpl implements ITransactionRepository {
     public void pushFailureMessage(byte[] messageBytes) {
         try {
             channel.basicPublish(messageQueueProps.get("exchangeName"),
-                    FAILURE_ROUTING_MESSAGE,
+                    FAILURE_ROUTING_MESSAGE, // Routing Key
                     basicPropertiesAMPQ.apply(messageQueueProps.get("userId")), messageBytes);
         } catch (Exception exception) {
             throw new MessageQueueException(ErrorConst.MESSAGE_QUE_OPERATION_FAILURE_MESSAGE, null);
@@ -49,7 +49,7 @@ public class TransactionRepositoryImpl implements ITransactionRepository {
     public void pushProcessMessage(byte[] messageBytes) {
         try {
             channel.basicPublish(messageQueueProps.get("exchangeName"),
-                    PROCESS_ROUTING_MESSAGE,
+                    PROCESS_ROUTING_MESSAGE, // Routing Key
                     basicPropertiesAMPQ.apply(messageQueueProps.get("userId")), messageBytes);
         } catch (Exception exception) {
             throw new MessageQueueException(ErrorConst.MESSAGE_QUE_OPERATION_FAILURE_MESSAGE, null);
