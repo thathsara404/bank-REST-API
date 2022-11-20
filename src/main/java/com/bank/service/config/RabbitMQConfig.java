@@ -105,6 +105,17 @@ public class RabbitMQConfig {
             // So U do not bind this to specific queue.
             // String queueName = channel.queueDeclare().getQueue();
             // channel.queueBind(queueName, exchangeName, routingKey);
+
+            // To set headers
+            // 1) Apply Header to BuiltExchangeType. 2) change the pushProcessMessage method as follows
+            /*
+             channel.basicPublish(exchangeName, routingKey,
+             new AMQP.BasicProperties.Builder()
+               .headers(headers)
+               .build(),
+               messageBodyBytes);
+
+            * */
         } catch (IOException e) {
             e.printStackTrace();
         }
