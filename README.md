@@ -31,11 +31,11 @@ use  `mvn dependency:tree` to view more.
 | 6     | Run Transaction Processor | Make sure Transaction Processor is up and running to run transaction api route. | Now you can consume the APIs. |
 
 # Steps to run with docker
-| Step | Instructions                           | Description                                                                                               |
-|------|:---------------------------------------|:--------------------------------------------------------------------------------------------------------- |
+| Step | Instructions                           | Description                                                                       |
+|------|:---------------------------------------|:----------------------------------------------------------------------------------|
 | 1    | `bash docker-compose-run.sh`           | Run this bash script to initiate the app container and to connect to the network. |
 | 2    | Spin up the bankREST-API               | Follow the instructions in the bank-Transaction-Processor repo's README.          |
-| 3    | http://localhost:8080/                 | Login to the RabbitMQ dashboard.                                                  |
+| 3    | http://localhost:8080/                 | Login to the RabbitMQ dashboard (UN: myusername / PWD: mypassword).               |
 
 # Dev guide
 - make sure your java version is 17
